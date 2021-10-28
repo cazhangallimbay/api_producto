@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.*
 @CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PATCH, RequestMethod.PUT])
 class ProductController {
     @Autowired
-    lateinit var productService: ProductService
+    lateinit var ProductService: ProductService
 
     @GetMapping
     fun list(): List<Producto>{
-        return productService.list()
+        return ProductService.list()
     }
+  @PostMapping
+  fun save(@RequestBody producto: Producto): Producto{
+    return ProductService.save(producto)
+  }
 
 
 }
