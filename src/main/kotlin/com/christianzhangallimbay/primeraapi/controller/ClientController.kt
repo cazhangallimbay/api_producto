@@ -21,4 +21,21 @@ class ClientController {
    return ClientService.save(client)
 
  }
+
+  @PutMapping
+  fun update (@RequestBody client: Client):Client{
+    return ClientService.update(client)
 }
+
+  @PatchMapping
+  fun updateDescription (@RequestBody client: Client):Client{
+    return ClientService.updateDescription(client)
+  }
+
+  @DeleteMapping("/delete/{id}")
+  fun delete (@PathVariable("id") id: Long):Boolean{
+    return ClientService.delete(id)
+  }
+
+}
+
