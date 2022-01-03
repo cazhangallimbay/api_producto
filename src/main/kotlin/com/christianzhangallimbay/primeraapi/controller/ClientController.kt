@@ -25,6 +25,7 @@ class ClientController {
   @PutMapping
   fun update (@RequestBody client: Client):Client{
     return ClientService.update(client)
+    
 }
 
   @PatchMapping
